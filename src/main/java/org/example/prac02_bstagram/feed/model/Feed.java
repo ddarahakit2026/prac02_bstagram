@@ -28,4 +28,7 @@ public class Feed {
 
     @OneToMany(mappedBy = "feed", fetch = FetchType.LAZY)
     private List<Likes> likesList;
+
+    @OneToMany(mappedBy = "feed", fetch = FetchType.LAZY)
+    private List<FeedImage> feedImageList;
 }
