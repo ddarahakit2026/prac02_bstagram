@@ -10,12 +10,14 @@ public class FeedDto {
         private Long idx;
         private String contents;
         private String writer;
+        private int likesCount;
 
         public static FeedRes from(Feed entity) {
             return FeedRes.builder()
                     .idx(entity.getIdx())
                     .contents(entity.getContents())
                     .writer(entity.getUser().getName())
+                    .likesCount(entity.getLikesList().size())
                     .build();
         }
     }

@@ -6,7 +6,10 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.example.prac02_bstagram.likes.model.Likes;
 import org.example.prac02_bstagram.user.model.User;
+
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -22,4 +25,7 @@ public class Feed {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_idx")
     private User user;
+
+    @OneToMany(mappedBy = "feed", fetch = FetchType.LAZY)
+    private List<Likes> likesList;
 }
