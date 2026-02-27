@@ -2,10 +2,7 @@ package org.example.prac02_bstagram.feed.model;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -20,6 +17,7 @@ public class FeedImage {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "feed_idx")
+    @Setter
     private Feed feed;
 
 }

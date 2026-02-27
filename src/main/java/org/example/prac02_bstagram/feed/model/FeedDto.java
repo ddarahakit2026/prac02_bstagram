@@ -4,8 +4,23 @@ import lombok.Builder;
 import lombok.Getter;
 import org.example.prac02_bstagram.likes.model.Likes;
 import org.example.prac02_bstagram.user.model.AuthUserDetails;
+import org.example.prac02_bstagram.user.model.User;
+
+import java.util.List;
 
 public class FeedDto {
+    @Getter
+    public static class Reg {
+        private String contents;
+        private List<Long> imageIdxList;
+
+        public Feed toEntity(AuthUserDetails user) {
+            return Feed.builder()
+                    .contents(contents)
+                    .user(user.toEntity())
+                    .build();
+        }
+    }
 
     @Builder
     @Getter

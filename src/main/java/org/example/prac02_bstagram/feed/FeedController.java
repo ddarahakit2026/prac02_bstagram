@@ -7,10 +7,7 @@ import org.example.prac02_bstagram.feed.model.FeedDto;
 import org.example.prac02_bstagram.user.model.AuthUserDetails;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
@@ -26,6 +23,16 @@ public class FeedController {
        List<FeedDto.FeedRes> result = feedService.list(user);
 
        return ResponseEntity.ok(BaseResponse.success(result));
+    }
+
+    @PostMapping("/reg")
+    public ResponseEntity reg(
+            @AuthenticationPrincipal AuthUserDetails user,
+            @RequestBody FeedDto.Reg dto
+    ) {
+        feedService.reg(user, dto);
+
+        return ResponseEntity.ok("성공");
     }
 
     @PostMapping("/upload/image")
