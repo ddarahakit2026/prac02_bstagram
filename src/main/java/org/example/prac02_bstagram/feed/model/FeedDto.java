@@ -6,6 +6,22 @@ import org.example.prac02_bstagram.likes.model.Likes;
 import org.example.prac02_bstagram.user.model.AuthUserDetails;
 
 public class FeedDto {
+
+    @Builder
+    @Getter
+    public static class ImageUploadRes {
+        private Long idx;
+        private String imageUrl;
+
+        public static ImageUploadRes from(FeedImage entity) {
+            return ImageUploadRes.builder()
+                    .idx(entity.getIdx())
+                    .imageUrl(entity.getImageUrl())
+                    .build();
+        }
+    }
+
+
     @Getter
     @Builder
     public static class FeedRes {
