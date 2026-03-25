@@ -1,0 +1,24 @@
+{
+  "name": "bstagram",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "docker": "docker run -d -p 81:80 -v \"C:\\backend\\01_doc\\10. Spring\\실습\\6일차 연습\\frontend_bstagram_이미지 없이\\dist\":/usr/share/nginx/html  -v \"C:\\backend\\01_doc\\10. Spring\\실습\\6일차 연습\\frontend_bstagram_이미지 없이\\nginx\":/etc/nginx/conf.d  nginx:latest"
+  },
+  "dependencies": {
+    "axios": "^1.11.0",
+    "encrypt-storage": "^2.14.7",
+    "pinia": "^2.3.1",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0",
+    "vue3-carousel": "^0.13.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "vite": "^6.0.5"
+  }
+}
